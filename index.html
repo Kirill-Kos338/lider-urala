@@ -151,6 +151,14 @@ footer{text-align:center;color:var(--mut);padding:40px 5vw calc(40px + env(safe-
 .chips span.w{border-style:dashed;border-color:var(--mut);color:var(--mut)}
 @media(max-width:640px){.fab a{width:58px;height:58px}.fab em{display:none}}
 @media(prefers-reduced-motion:reduce){.fab .k{animation:none}}
+.ckb{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;max-width:560px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:var(--card);color:var(--fg);border-radius:20px;padding:20px 22px;border:1px solid color-mix(in srgb,var(--acc) 45%,transparent);box-shadow:0 20px 50px -10px rgba(0,0,0,.65);animation:ckin .7s cubic-bezier(.2,.9,.2,1)}
+.ckb[hidden]{display:none}
+.ckb p{margin:0;flex:1 1 280px;font-size:14px;line-height:1.55;color:var(--mut)}
+.ckb a{color:var(--acc)}
+.ckb .ckx{flex:1 1 100%;font-size:13px}
+.ckb .btn{padding:11px 28px;font-size:15px}
+@keyframes ckin{from{opacity:0;transform:translateY(40px)}}
+@media(max-width:640px){.ckb{left:12px;right:12px;max-width:none}body.ck .fab{bottom:calc(250px + env(safe-area-inset-bottom,0px))}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition:none!important}.rv{opacity:1;transform:none}.marq div{animation:none}}
 </style>
 </head>
@@ -283,6 +291,11 @@ footer{text-align:center;color:var(--mut);padding:40px 5vw calc(40px + env(safe-
 </section>
 
 <footer><a href="https://wa.me/79128031221" target="_blank" rel="noopener">WhatsApp +7 912 803-12-21</a> · <a href="https://vk.ru/maltipuurala" target="_blank" rel="noopener">ВК</a><br>© Питомник «Лидер Урала». Профессиональное разведение собак более 30 лет.</footer>
+<div class="ckb" id="ckb" role="dialog" aria-label="Файлы cookie" hidden>
+<p>Мы используем файлы cookie, чтобы сайт работал корректно и становился удобнее. Продолжая пользоваться сайтом, вы соглашаетесь на обработку этих данных. <a href="#" id="ckm">Подробнее</a></p>
+<button class="btn" id="cka" type="button">Принимаю</button>
+<p class="ckx" id="ckx" hidden>Сайт не собирает и не хранит данные из формы заявки: текст копируется на вашём устройстве, а отправляете его вы сами во ВКонтакте. Для оформления используются шрифты Google Fonts: при их загрузке сервис получает технические данные вашего устройства, например IP-адрес. При переходе по ссылкам на ВКонтакте и WhatsApp действуют правила этих сервисов. Ваш выбор сохраняется в браузере.</p>
+</div>
 <div class="fab">
 <a href="https://vk.ru/maltipu_urala" target="_blank" rel="noopener" aria-label="Наша группа в ВК"><span class="k"><b>VK</b></span><em>Наша группа в ВК</em></a>
 </div>
@@ -331,6 +344,12 @@ document.getElementById('prv').onclick=function(){go(k-1);rs()};document.getElem
 function rs(){clearInterval(t);if(!matchMedia('(prefers-reduced-motion:reduce)').matches)t=setInterval(function(){go(k+1)},14000)}
 box.addEventListener('mouseenter',function(){clearInterval(t)});box.addEventListener('mouseleave',rs);box.addEventListener('focusin',function(){clearInterval(t)});
 go(0);rs();})();
+</script>
+<script>
+(function(){var b=document.getElementById('ckb'),K='lider_cookie_ok';try{if(localStorage.getItem(K))return}catch(e){}
+setTimeout(function(){b.hidden=false;document.body.classList.add('ck')},1500);
+document.getElementById('cka').onclick=function(){try{localStorage.setItem(K,'1')}catch(e){}b.hidden=true;document.body.classList.remove('ck')};
+document.getElementById('ckm').onclick=function(e){e.preventDefault();var x=document.getElementById('ckx');x.hidden=!x.hidden}})();
 </script>
 </body>
 </html>
