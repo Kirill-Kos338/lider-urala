@@ -151,6 +151,12 @@ footer{text-align:center;color:var(--mut);padding:40px 5vw calc(40px + env(safe-
 .chips span.w{border-style:dashed;border-color:var(--mut);color:var(--mut)}
 @media(max-width:640px){.fab a{width:58px;height:58px}.fab em{display:none}}
 @media(prefers-reduced-motion:reduce){.fab .k{animation:none}}
+.faq details{background:var(--card);border-radius:16px;padding:18px 24px;margin-top:14px}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--acc);font-size:24px;line-height:1;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:12px 0 0;color:var(--mut)}
 .ckb{position:fixed;left:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;max-width:560px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:var(--card);color:var(--fg);border-radius:20px;padding:20px 22px;border:1px solid color-mix(in srgb,var(--acc) 45%,transparent);box-shadow:0 20px 50px -10px rgba(0,0,0,.65);animation:ckin .7s cubic-bezier(.2,.9,.2,1)}
 .ckb[hidden]{display:none}
 .ckb p{margin:0;flex:1 1 280px;font-size:14px;line-height:1.55;color:var(--mut)}
@@ -161,6 +167,7 @@ footer{text-align:center;color:var(--mut);padding:40px 5vw calc(40px + env(safe-
 @media(max-width:640px){.ckb{left:12px;right:12px;max-width:none}body.ck .fab{bottom:calc(250px + env(safe-area-inset-bottom,0px))}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;transition:none!important}.rv{opacity:1;transform:none}.marq div{animation:none}}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Продаёте ли вы щенков в другие города?","acceptedAnswer":{"@type":"Answer","text":"Да. Мы продаём щенков по всей России и за границу, работаем с Москвой, Челябинском и Екатеринбургом."}},{"@type":"Question","name":"Какие породы есть в питомнике?","acceptedAnswer":{"@type":"Answer","text":"Мальтипу, тедди-пудель, цветной пудель, папийон, пушон, мальтезе и кавапу."}},{"@type":"Question","name":"Есть ли у щенков документы?","acceptedAnswer":{"@type":"Answer","text":"У щенков цветного пуделя есть документы СКОР и РКФ."}},{"@type":"Question","name":"Помогаете ли вы после покупки?","acceptedAnswer":{"@type":"Answer","text":"Да, мы консультируем по выращиванию, помогаем в подборе щенка и остаёмся на связи после покупки."}}]}</script>
 </head>
 <body>
 <nav><b>Лидер Урала</b><div><a href="#about">О питомнике</a><a href="#dogs">Породы</a><a href="#reviews">Отзывы</a><a href="#contact">Контакты</a></div></nav>
@@ -168,7 +175,7 @@ footer{text-align:center;color:var(--mut);padding:40px 5vw calc(40px + env(safe-
 <header class="hero" id="top">
 <canvas id="snow" aria-hidden="true"></canvas>
 <div>
-<h1 aria-label="Лидер Урала"><div id="t1"></div><div class="l2" id="t2"></div></h1>
+<h1 aria-label="Лидер Урала"><div id="t1">ЛИДЕР</div><div class="l2" id="t2">УРАЛА</div></h1>
 <p>Профессиональное разведение и выращивание собак и щенков декоративных и служебных пород. Более 30 лет в племенной работе.</p>
 <a class="btn" href="#dogs">Посмотреть породы</a>
 </div>
@@ -273,6 +280,15 @@ footer{text-align:center;color:var(--mut);padding:40px 5vw calc(40px + env(safe-
 </div>
 </section>
 
+<section id="faq" class="faq">
+<h2 class="rv">Частые вопросы</h2>
+<details class="rv"><summary>Продаёте ли вы щенков в другие города?</summary><p>Да. Мы продаём щенков по всей России и за границу и работаем с крупными городами, например с Москвой, Челябинском и Екатеринбургом. Условия передачи щенка в ваш город уточняйте по телефону +7 912 803-12-21 или в WhatsApp.</p></details>
+<details class="rv"><summary>Какие породы есть в питомнике?</summary><p>Мальтипу, тедди-пудель, цветной пудель, папийон, пушон, мальтезе и кавапу. Наличие щенков и планируемые пометы уточняйте у нас.</p></details>
+<details class="rv"><summary>Есть ли у щенков документы?</summary><p>У щенков цветного пуделя есть документы СКОР и РКФ. По остальным породам уточняйте наличие и вид документов при выборе щенка.</p></details>
+<details class="rv"><summary>Помогаете ли вы после покупки?</summary><p>Да. Мы консультируем по выращиванию, помогаем в подборе щенка и остаёмся на связи с информационной поддержкой после покупки. У заводчика ветеринарное и кинологическое образование и более 30 лет опыта в племенной работе.</p></details>
+<details class="rv"><summary>Как выбрать щенка и записаться?</summary><p>Напишите нам во ВКонтакте или в WhatsApp, либо позвоните: расскажите, какую породу и какой характер вы ищете, и мы поможем подобрать щенка.</p></details>
+</section>
+
 <section id="contact">
 <h2 class="rv">Записаться на щенка</h2>
 <p class="lead rv">Оставьте контакты — расскажем о планируемых пометах и поможем подобрать щенка.</p>
@@ -304,7 +320,7 @@ footer{text-align:center;color:var(--mut);padding:40px 5vw calc(40px + env(safe-
 (function(){
 var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 // Заголовок по буквам
-function split(id,txt,off){var el=document.getElementById(id);txt.split('').forEach(function(c,i){var s=document.createElement('span');s.textContent=c===' '?'\u00a0':c;s.style.setProperty('--i',i+off);el.appendChild(s)})}
+function split(id,txt,off){var el=document.getElementById(id);el.textContent='';txt.split('').forEach(function(c,i){var s=document.createElement('span');s.textContent=c===' '?'\u00a0':c;s.style.setProperty('--i',i+off);el.appendChild(s)})}
 split('t1','ЛИДЕР',0);split('t2','УРАЛА',5);
 // Снег
 var cv=document.getElementById('snow'),cx=cv.getContext('2d'),fl=[],W,H;
